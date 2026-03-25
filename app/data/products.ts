@@ -10,7 +10,7 @@ export const products: Product[] = [
     name: "Crop Top Rebelde",
     price: 34990,
     category: "tops",
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop",
+    image: "/images/zapatillas.jpeg",
     isNew: true,
   },
   {

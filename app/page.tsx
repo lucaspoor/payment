@@ -9,6 +9,7 @@ import MarqueeBanner from "./components/scroller";
 import CollectionGrid from "./components/grid";
 import ManifestoSection from "./components/manifiesto";
 import ProductsSection from "./components/productSection";
+import FooterSection from "./components/footer";
 
 // public key
 initMercadoPago("APP_USR-9f33c069-ae11-4f55-b9e7-294dd5959c5a");
@@ -26,14 +27,13 @@ export default function Home() {
   const [preferenceId, setPreferenceId] = useState(null);
 
   const exampleProduct: Product = {
-  id: '1',
-  name: 'Camiseta de algodón',
-  description: 'Camiseta de algodón de alta calidad',
-  price: 19.99,
-  discount: 20,
-  image: 'https://example.com/camiseta.jpg',
-};
-
+    id: "1",
+    name: "Camiseta de algodón",
+    description: "Camiseta de algodón de alta calidad",
+    price: 19.99,
+    discount: 20,
+    image: "https://example.com/camiseta.jpg",
+  };
 
   const comprar = async () => {
     const res = await fetch("/api/create-preference", {
@@ -48,13 +48,14 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-     <HeroSection />
-    {/* <MarqueeBanner/> */}
-    <CollectionGrid />
-    <ManifestoSection/>
-    <ProductsSection />
+      <HeroSection />
+      {/* <MarqueeBanner/> */}
+      <CollectionGrid />
+      <ManifestoSection />
+      <ProductsSection />
+      <FooterSection />
 
-      <div style={{ padding: 40 }}>
+      {/* <div style={{ padding: 40 }}>
         <h1>Polera Negra</h1>
 
         <p>Precio: $20.000</p>
@@ -63,7 +64,7 @@ export default function Home() {
 
         {preferenceId && <Wallet initialization={{ preferenceId }} />}
       </div>
-      <ProductCard product={exampleProduct} />
+      <ProductCard product={exampleProduct} /> */}
     </div>
   );
 }

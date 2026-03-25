@@ -1,25 +1,35 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useProductFilters } from "@/hooks/useProductFilters";
 import ProductCard from "@/components/productCard";
 import { CATEGORIES } from "@/types/product";
 import Navbar from "@/components/navbar";
+import Link from "next/link";
+
+type ProductClientProps = {
+  products: any[];
+  initialCategory: string;
+};
 
 export default function ProductsClient({
   products,
   initialCategory,
-}: {
-  products: any[];
-  initialCategory: string;
-}) {
-  const { filtered, activeCategory, setActiveCategory, sortBy, setSortBy } =
-    useProductFilters(products);
+}: ProductClientProps) {
+  const [sortBy, setSortBy] = useState<"newest" | "price-asc" | "price-desc">(
+    "newest",
+  );
+  const filtered = products.filter((p) =>
+    initialCategory === "all" ? true : p.category === initialCategory,
+  );
 
-  // 👇 IMPORTANTE: setear categoría al montar
-  useEffect(() => {
-    setTimeout(() => setActiveCategory(initialCategory), 500);
-  }, [initialCategory]);
+  //   const { filtered, activeCategory, setActiveCategory, sortBy, setSortBy } =
+  //     useProductFilters(products);
+
+  //   // 👇 IMPORTANTE: setear categoría al montar
+  //   useEffect(() => {
+  //     setTimeout(() => setActiveCategory(initialCategory), 500);
+  //   }, [initialCategory]);
 
   //   if (initialCategory !== "all" && activeCategory !== initialCategory) {
   //     return <p>Cargando productos...</p>;
@@ -59,20 +69,20 @@ export default function ProductsClient({
       {/* Category filters */}
       <div className="flex flex-wrap gap-2 mb-12">
         {CATEGORIES.map((cat) => (
-          <button
+          <Link
             key={cat.value}
-            onClick={() => setActiveCategory(cat.value)}
+            href={`/products/${cat.value}`}
             className={`
               px-6 py-2.5 font-body text-xs tracking-[0.2em] uppercase transition-all duration-300 border
               ${
-                activeCategory === cat.value
+                initialCategory === cat.value
                   ? "bg-primary border-primary text-primary-foreground"
                   : "bg-transparent border-border text-muted-foreground hover:border-foreground hover:text-foreground"
               }
             `}
           >
             {cat.label}
-          </button>
+          </Link>
         ))}
       </div>
 
