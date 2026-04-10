@@ -2,6 +2,7 @@
   "name": "payment",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,12 +12,20 @@
   "dependencies": {
     "20": "^1.0.0",
     "@mercadopago/sdk-react": "^1.0.7",
+    "@payloadcms/db-mongodb": "^3.82.1",
+    "@payloadcms/db-postgres": "^3.82.1",
+    "@payloadcms/db-sqlite": "^3.82.1",
+    "@payloadcms/next": "^3.82.1",
+    "@payloadcms/richtext-lexical": "^3.82.1",
+    "graphql": "^16.13.2",
     "lucide-react": "^0.577.0",
     "mercadopago": "^2.12.0",
-    "next": "16.1.6",
+    "next": "^16.2.2",
     "node": "^25.8.1",
+    "payload": "^3.82.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

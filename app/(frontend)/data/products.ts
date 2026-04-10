@@ -1,4 +1,4 @@
-import type { Product } from "@/types/product";
+import type { Product } from "@/(frontend)/types/product";
 
 /**
  * Mock data — reemplazá este array por un fetch a tu API/DB.

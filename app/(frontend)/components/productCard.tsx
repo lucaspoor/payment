@@ -1,8 +1,8 @@
-import type { Product } from "@/types/product";
+import type { Product } from "@/(frontend)/types/product";
 
 /**
  * Card individual de producto.
- * 
+ *
  * Decisiones de diseño:
  * - Sin border-radius (--radius: 0px) → estética angular de la marca
  * - Hover con scale sutil en la imagen, no en toda la card

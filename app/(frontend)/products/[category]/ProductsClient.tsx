@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useProductFilters } from "@/hooks/useProductFilters";
-import ProductCard from "@/components/productCard";
-import { CATEGORIES } from "@/types/product";
-import Navbar from "@/components/navbar";
+import { useProductFilters } from "@/(frontend)/hooks/useProductFilters";
+import ProductCard from "@/(frontend)/components/productCard";
+import { CATEGORIES } from "@/(frontend)/types/product";
+import Navbar from "@/(frontend)/components/navbar";
 import Link from "next/link";
 
 type ProductClientProps = {

@@ -1,4 +1,4 @@
-import { products } from "@/data/products";
+import { products } from "@/(frontend)/data/products";
 import ProductsClient from "./ProductsClient";
 
 type CategoryPageProps = {

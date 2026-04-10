@@ -1,9 +1,11 @@
+"use client";
+
 import { useState, useMemo } from "react";
-import type { Product, SortOption } from "@/types/product";
+import type { Product, SortOption } from "@/(frontend)/types/product";
 
 /**
  * Custom hook que encapsula TODA la lógica de filtrado y ordenamiento.
- * 
+ *
  * ¿Por qué un hook separado?
  * - Separa lógica de negocio de la UI (Single Responsibility)
  * - Es reutilizable: podés usarlo en una página de búsqueda, un modal, etc.

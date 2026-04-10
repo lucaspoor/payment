@@ -1,7 +1,7 @@
-import { products } from "@/data/products";
-import { CATEGORIES } from "@/types/product";
-import { useProductFilters } from "@/hooks/useProductFilters";
-import ProductCard from "@/components/productCard";
+import { products } from "@/(frontend)/data/products";
+import { CATEGORIES } from "@/(frontend)/types/product";
+import { useProductFilters } from "@/(frontend)/hooks/useProductFilters";
+import ProductCard from "@/(frontend)/components/productCard";
 
 /**
  * Sección de productos con filtros y ordenamiento.
