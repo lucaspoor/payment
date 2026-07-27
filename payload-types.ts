@@ -137,7 +137,7 @@ export interface Product {
       }[]
     | null;
   category?: (number | null) | Category;
-  sizes?: ('S' | 'M' | 'L' | 'XL')[] | null;
+  sizes?: ('S' | 'M' | 'L' | 'XL' | 'XXL')[] | null;
   stock?: number | null;
   available?: boolean | null;
   slug?: string | null;
